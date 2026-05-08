@@ -1,0 +1,17 @@
+Included in this folder:
+- main.py runnable with: python3 main.py --input validation_input.json --output output.json
+- discussion_retrieval_utils.py retrieval/helper code
+- README.md and requirements.txt
+- data/sourcedocs documentation corpus
+- data/validation released validation/golden QA files
+- output.json final validation output
+- discussion1-rag-scifact.ipynb RapidFire experiment notebook
+- all_config_results.json and rag_results_summary.txt
+- rag_outputs best judged output, summary, and judge report
+- logs/rapidfire-8configs.log
+
+Still left before final course submission:
+- Write/export the project report PDF.
+- Zip or publish this submission folder/repo as required by the course instructions.
+- Create/use the private GitHub repository and add required collaborators if that has not been done.
+- Do not include api-key.txt, api.txt, or any secret key in the final upload.

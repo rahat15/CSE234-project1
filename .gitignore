@@ -1,0 +1,36 @@
+api-key.txt
+api.txt
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# VS Code Server and extensions (large files)
+.vscode-server/
+.vscode/
+
+# System directories
+.cache/
+.codex/
+.kube/
+.ssh/
+.bash_history
+.bash_profile
+.bashrc
+.profile
+.motd
+
+# Large files and databases
+*.db
+*.db-shm
+*.db-wal
+
+# IDE and OS files
+.DS_Store
+.idea/
+*.swp
+*.swo
+
+# Build and dist directories
+build/
+dist/
+*.egg-info/

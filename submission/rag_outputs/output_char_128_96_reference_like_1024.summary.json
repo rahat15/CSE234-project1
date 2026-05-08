@@ -1,0 +1,18 @@
+{
+  "output": "rag_outputs/output_char_128_96_reference_like_1024.json",
+  "judge_report": "rag_outputs/output_char_128_96_reference_like_1024.judge.json",
+  "precision@5": 0.5018518518518518,
+  "recall@5": 0.9555555555555556,
+  "f1@5": 0.6311111111111111,
+  "retrieval_score": 0.6961728395061728,
+  "partial_generation_score": 0.8681481481481481,
+  "partial_total_score": 0.7821604938271605,
+  "judge_summary": {
+    "Correctness (pass rate)": 0.8666666666666667,
+    "Faithfulness (pass rate)": 0.9111111111111111,
+    "Completeness (raw, 0-5)": 4.133333333333334,
+    "Completeness (normalized)": 0.8266666666666668,
+    "Partial Generation Score": 0.8681481481481481,
+    "Partial Generation Score note": "Mean of 3 normalized released metrics. The leaderboard Generation Score averages all 5 normalized metrics (the 3 released + 2 hidden binary)."
+  }
+}

@@ -1,0 +1,186 @@
+[
+  {
+    "run_uuid": "cb02a2e0ed744bea9948dc097ef92f12",
+    "run_name": "1",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.9296296296296297,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.588724279835391,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.6542121647034393,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.6214682222694151,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.25163656308281895
+    },
+    "tags": {
+      "mlflow.runName": "1"
+    }
+  },
+  {
+    "run_uuid": "2612b7b7b8094b2aa2a786471824fefb",
+    "run_name": "2",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.9074074074074074,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.5818459729570841,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.6408060861499016,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.6113260295534928,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.2808567114232728
+    },
+    "tags": {
+      "mlflow.runName": "2"
+    }
+  },
+  {
+    "run_uuid": "2f92d01e12b846b9972e89907ea53d09",
+    "run_name": "3",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.8481481481481482,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.6961728395061728,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.6271667916768097,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.6616698155914912,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.28279641486737145
+    },
+    "tags": {
+      "mlflow.runName": "3"
+    }
+  },
+  {
+    "run_uuid": "31ea9c87f9f8412a9a12207c1f85bfca",
+    "run_name": "4",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.9296296296296297,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.588724279835391,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.6599541988654197,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.6243392393504054,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.2746502210611556
+    },
+    "tags": {
+      "mlflow.runName": "4"
+    }
+  },
+  {
+    "run_uuid": "d02f3f415314459aa5d1be5f1886239f",
+    "run_name": "5",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.8814814814814815,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.6614814814814814,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.6246750248241856,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.6430782531528335,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.283642850972211
+    },
+    "tags": {
+      "mlflow.runName": "5"
+    }
+  },
+  {
+    "run_uuid": "41b1d8c5095c46f6aa1fa8e0ae505eb1",
+    "run_name": "6",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.8962962962962964,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.5824279835390946,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.6146643770189077,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.5985461802790012,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.2700737232049613
+    },
+    "tags": {
+      "mlflow.runName": "6"
+    }
+  },
+  {
+    "run_uuid": "ddee9d9a92b4445c924b4f79fda99ae3",
+    "run_name": "7",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.8562962962962962,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.6619753086419753,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.622676703969442,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.6423260063057087,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.2763122544377034
+    },
+    "tags": {
+      "mlflow.runName": "7"
+    }
+  },
+  {
+    "run_uuid": "941957438ed94e0993ee5d9b070245c8",
+    "run_name": "8",
+    "status": "FINISHED",
+    "params": {
+      "model": "api-gpt-oss-120b"
+    },
+    "metrics": {
+      "Total": 45.0,
+      "MRR": 0.8777777777777778,
+      "MRR_confidence_interval": 0.0,
+      "Retrieval Score": 0.6120576131687243,
+      "Retrieval Score_confidence_interval": 0.0,
+      "Generation Overlap Score": 0.6553986775911914,
+      "Generation Overlap Score_confidence_interval": 0.0,
+      "Total Score": 0.6337281453799578,
+      "Total Score_confidence_interval": 0.0,
+      "Throughput": 0.26412536323755875
+    },
+    "tags": {
+      "mlflow.runName": "8"
+    }
+  }
+]

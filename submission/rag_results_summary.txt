@@ -1,0 +1,292 @@
+RapidFire Documentation RAG Results
+========================================
+
+Best configuration
+------------------
+Notebook: discussion1-rag-scifact.ipynb
+Data folder: data/
+Retriever: custom TF-IDF char_wb ngrams
+Retrieval config: char_128_96
+Generator model: api-gpt-oss-120b
+Max completion tokens: 1024
+Triton base URL: https://tritonai-api.ucsd.edu/v1
+
+Score summary
+-------------
+Precision@5: 0.501852
+Recall@5: 0.955556
+F1@5: 0.631111
+Retrieval Score: 0.696173
+Partial Generation Score: 0.868148
+Partial Total Score: 0.782160
+
+All RapidFire config results
+----------------------------
+Run | Config | Retrieval Score | Generation Overlap Score | Total Score | MRR | Throughput | Status
+------------------------------------------------------------------------------------------------------------------------
+1 | word_192_16, api-gpt-oss-120b, max_completion_tokens=1024 | 0.588724 | 0.654212 | 0.621468 | 0.929630 | 0.251637 | FINISHED
+2 | word_128_32, api-gpt-oss-120b, max_completion_tokens=1024 | 0.581846 | 0.640806 | 0.611326 | 0.907407 | 0.280857 | FINISHED
+3 | char_128_96, api-gpt-oss-120b, max_completion_tokens=1024 | 0.696173 | 0.627167 | 0.661670 | 0.848148 | 0.282796 | FINISHED
+4 | word_192_16, api-gpt-oss-120b, max_completion_tokens=1536 | 0.588724 | 0.659954 | 0.624339 | 0.929630 | 0.274650 | FINISHED
+5 | word_96_64, api-gpt-oss-120b, max_completion_tokens=1024 | 0.661481 | 0.624675 | 0.643078 | 0.881481 | 0.283643 | FINISHED
+6 | word_96_32, api-gpt-oss-120b, max_completion_tokens=1024 | 0.582428 | 0.614664 | 0.598546 | 0.896296 | 0.270074 | FINISHED
+7 | char_96_64, api-gpt-oss-120b, max_completion_tokens=1024 | 0.661975 | 0.622677 | 0.642326 | 0.856296 | 0.276312 | FINISHED
+8 | word_192_64, api-gpt-oss-120b, max_completion_tokens=1024 | 0.612058 | 0.655399 | 0.633728 | 0.877778 | 0.264125 | FINISHED
+
+Important note on all-config table
+----------------------------------
+The all-config RapidFire table uses the notebook's fast Generation Overlap Score, which is a local lexical proxy. The official-style LLM judge was run for the best config only, because judging every config is much slower and costs additional API calls.
+
+Judge summary
+-------------
+Correctness (pass rate): 0.866667
+Faithfulness (pass rate): 0.911111
+Completeness (raw, 0-5): 4.133333
+Completeness (normalized): 0.826667
+Partial Generation Score: 0.868148
+Partial Generation Score note: Mean of 3 normalized released metrics. The leaderboard Generation Score averages all 5 normalized metrics (the 3 released + 2 hidden binary).
+
+Generated artifacts
+-------------------
+Output JSON: rag_outputs/output_char_128_96_reference_like_1024.json
+Judge report JSON: rag_outputs/output_char_128_96_reference_like_1024.judge.json
+Summary JSON: rag_outputs/output_char_128_96_reference_like_1024.summary.json
+All config JSON: all_config_results.json
+RapidFire log: rapidfireai/logs/discussion1-rag-docs-tuning-8configs/rapidfire.log
+
+Judge metadata
+--------------
+model: claude-sonnet-4-6
+base_url: https://tritonai-api.ucsd.edu/v1
+n_questions: 45
+n_missing_from_output: 0
+n_extra_in_output: 0
+n_missing_context: 0
+n_judge_failures: 0
+output_file: rag_outputs/output_char_128_96_reference_like_1024.json
+validation_file: data/validation/validation-set-golden-qa-pairs.json
+
+Per-question judge results
+--------------------------
+Q1: correctness=1, faithfulness=1, completeness=5, status=ok, sources=glossary.rst, configs.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q2: correctness=1, faithfulness=1, completeness=4, status=ok, sources=difference.rst, overview.rst, onlineagg.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q3: correctness=1, faithfulness=1, completeness=5, status=ok, sources=experiment.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q4: correctness=1, faithfulness=1, completeness=5, status=ok, sources=configs.rst, experiment.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q5: correctness=1, faithfulness=1, completeness=4, status=ok, sources=walkthroughrag.rst, walkthroughft.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q6: correctness=1, faithfulness=1, completeness=3, status=ok, sources=dashboard.rst, glossary.rst, icops.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q7: correctness=1, faithfulness=1, completeness=5, status=ok, sources=evalsfunctions.rst, promptothers.rst, ragspecs.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q8: correctness=0, faithfulness=1, completeness=4, status=ok, sources=rag_fiqa.rst, ragspecs.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q9: correctness=1, faithfulness=1, completeness=5, status=ok, sources=experiment.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q10: correctness=1, faithfulness=1, completeness=3, status=ok, sources=ragspecs.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q11: correctness=1, faithfulness=1, completeness=4, status=ok, sources=rag_scifact.rst, onlineagg.rst, promptothers.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q12: correctness=1, faithfulness=0, completeness=4, status=ok, sources=icops.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q13: correctness=1, faithfulness=1, completeness=4, status=ok, sources=evalsfunctions.rst, promptothers.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q14: correctness=1, faithfulness=1, completeness=5, status=ok, sources=walkthroughft.rst, walkthroughrag.rst, dashboard.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q15: correctness=1, faithfulness=1, completeness=5, status=ok, sources=configs.rst, models.rst, glossary.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q16: correctness=1, faithfulness=1, completeness=5, status=ok, sources=ragspecs.rst, experiment.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q17: correctness=1, faithfulness=1, completeness=5, status=ok, sources=troubleshooting.rst, walkthroughrag.rst, walkthroughft.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q18: correctness=1, faithfulness=1, completeness=5, status=ok, sources=evalsfunctions.rst, ragspecs.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q19: correctness=1, faithfulness=1, completeness=4, status=ok, sources=experiment.rst, configs.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q20: correctness=0, faithfulness=1, completeness=0, status=ok, sources=configs.rst, onlineagg.rst, fitfunctions.rst, glossary.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q21: correctness=1, faithfulness=1, completeness=5, status=ok, sources=generators.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q22: correctness=1, faithfulness=0, completeness=3, status=ok, sources=generators.rst, configs.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q23: correctness=1, faithfulness=1, completeness=3, status=ok, sources=promptothers.rst, evalsfunctions.rst, rag_gsm8k.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q24: correctness=0, faithfulness=1, completeness=2, status=ok, sources=promptothers.rst, glossary.rst, evalsfunctions.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q25: correctness=1, faithfulness=1, completeness=5, status=ok, sources=fitfunctions.rst, experiment.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q26: correctness=1, faithfulness=1, completeness=5, status=ok, sources=fitfunctions.rst, models.rst, walkthroughft.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q27: correctness=1, faithfulness=1, completeness=4, status=ok, sources=trainers.rst, models.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q28: correctness=0, faithfulness=0, completeness=4, status=ok, sources=trainers.rst, models.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q29: correctness=1, faithfulness=1, completeness=4, status=ok, sources=glossary.rst, walkthroughrag.rst, walkthroughft.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q30: correctness=1, faithfulness=1, completeness=4, status=ok, sources=dashboard.rst, glossary.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q31: correctness=1, faithfulness=1, completeness=5, status=ok, sources=issues.rst, faq.rst, experiment.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q32: correctness=1, faithfulness=1, completeness=4, status=ok, sources=grpo.rst, sft.rst, rag_gsm8k.rst, fitfunctions.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q33: correctness=1, faithfulness=1, completeness=5, status=ok, sources=dpo.rst, models.rst, walkthroughft.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q34: correctness=0, faithfulness=1, completeness=1, status=ok, sources=grpo.rst, fitfunctions.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q35: correctness=1, faithfulness=1, completeness=5, status=ok, sources=rag_scifact.rst, tutorials.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q36: correctness=1, faithfulness=1, completeness=5, status=ok, sources=ragspecs.rst, rag_gsm8k.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q37: correctness=1, faithfulness=1, completeness=5, status=ok, sources=overview.rst, tutorials.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q38: correctness=1, faithfulness=1, completeness=5, status=ok, sources=tutorials.rst, ragspecs.rst, rag_gsm8k.rst, overview.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q39: correctness=1, faithfulness=1, completeness=4, status=ok, sources=walkthroughrag.rst, walkthroughft.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q40: correctness=1, faithfulness=1, completeness=4, status=ok, sources=evalsfunctions.rst, experiment.rst, promptothers.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q41: correctness=1, faithfulness=1, completeness=4, status=ok, sources=onlineagg.rst, difference.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q42: correctness=1, faithfulness=1, completeness=4, status=ok, sources=issues.rst, sft.rst, onlineagg.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q43: correctness=1, faithfulness=1, completeness=5, status=ok, sources=issues.rst, walkthroughrag.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q44: correctness=1, faithfulness=1, completeness=3, status=ok, sources=models.rst, fitfunctions.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+Q45: correctness=0, faithfulness=0, completeness=4, status=ok, sources=evalsfunctions.rst, onlineagg.rst, promptothers.rst, config={'retrieval_config': 'char_128_96', 'prompt': 'reference_like', 'model': 'api-gpt-oss-120b', 'max_completion_tokens': 1024}
+
+First five generated answers
+----------------------------
+Q1: What are the two knob set generators currently supported by RapidFire AI for creating multi-config specifications?
+Retrieved sources: glossary.rst, configs.rst
+Answer:
+RapidFire AI currently provides **two knob‑set generators** that you can use when building a multi‑config specification:
+
+1. **`List()`** – supplies a **discrete list of values** for a knob (all values must share the same Python data type).  
+2. **`Range()`** – defines a **continuous interval** (start‑to‑end) from which values are sampled, with an optional `dtype` of `"int"` or `"float"`.
+
+These are the only knob‑set generators supported at present (see *configs.rst*).
+
+Q2: How does RapidFire AI's adaptive execution engine differ from traditional sequential execution for multi-config experiments?
+Retrieved sources: difference.rst, overview.rst, onlineagg.rst
+Answer:
+RapidFire AI does **not** run each configuration to completion before starting the next one.  
+Instead, its **adaptive execution engine** works as follows:
+
+1. **Shard‑based data partitioning** – the training or evaluation set is randomly split into a number of “chunks” (shards).  
+2. **Interruptible, multi‑config scheduling** – all configurations are launched on **one shard at a time**; after a shard finishes, RapidFire cycles to the next shard and continues running every config in parallel on that shard.  
+3. **Dynamic experiment control** – because execution is interruptible, you can **stop, resume, or clone‑modify** a running config on‑the‑fly (e.g., abort a poor‑performing config early, duplicate a promising one, change hyper‑parameters) without re‑running the whole experiment.  
+4. **Online aggregation** – as each shard is processed RapidFire produces **running metric estimates with confidence intervals**, giving real‑time feedback rather than waiting for a full‑epoch or full‑eval pass.  
+
+In contrast, **traditional sequential execution** (the status‑quo for most SFT/RFT or RAG eval pipelines) runs a single configuration **to completion** on the entire dataset before the next configuration starts. This approach is:
+
+* **Non‑interruptible** – you must wait for the full epoch or full evaluation to finish.  
+* **Single‑config at a time** – no parallelism across configs, so GPU/CPU resources are under‑utilized.  
+* **No real‑time metrics** – you only see final results after the whole run, making early stopping or on‑the‑fly cloning impossible.  
+
+Thus, RapidFire’s adaptive engine transforms multi‑config experiments from a slow, sequential batch process into a **hyper‑parallel, shard‑driven, dynamically controllable workflow** that speeds up experimentation and reduces DevOps overhead. (Source: `difference.rst`).
+
+Q3: What parameters does the Experiment constructor accept?
+Retrieved sources: experiment.rst
+Answer:
+The **Experiment** class is instantiated with the following constructor signature:
+
+```python
+def __init__(
+    self,
+    experiment_name: str,
+    mode: str = "fit",
+    experiments_path: str = "./rapidfire_experiments"
+) -> None
+```
+
+**Parameters**
+
+| Name | Type | Required? | Default | Description |
+|------|------|-----------|---------|-------------|
+| `experiment_name` | `str` | Yes | – | A unique name for the experiment. |
+| `mode` | `str` | No | `"fit"` | The mode in which the experiment will run; must be either `"fit"` or `"eval"`. |
+| `experiments_path` | `str` | No | `"./rapidfire_experiments"` | Filesystem path where the experiment’s artifacts (logs, checkpoints, etc.) are stored. |
+
+*Source: `experiment.rst` (Experiment Constructor section).*
+
+Q4: What is the difference between RFGridSearch and RFRandomSearch in terms of how they handle knob values?
+Retrieved sources: configs.rst, experiment.rst
+Answer:
+**RFGridSearch vs. RFRandomSearch – how knob values are treated**
+
+| Aspect | **RFGridSearch** | **RFRandomSearch** |
+|--------|------------------|--------------------|
+| **Allowed knob specifications** | • A knob may be a **single value** (e.g., `learning_rate=0.01`).<br>• Or a **`List()`** of discrete values (e.g., `batch_size=List(16, 32, 64)`).<br>• **`Range()`** is **not allowed** – using it will raise an error. | • A knob may be a **single value**, a **`List()`** of discrete values, **or** a **`Range()`** (continuous) specification (e.g., `lr=Range(0.001, 0.01, dtype="float")`). |
+| **How combinations are generated** | Performs a **grid search**: every possible Cartesian‑product of the values in each `List()` is enumerated. The total number of runs equals the product of the list lengths (plus any single‑value knobs). | Performs a **random search**: for each run it **uniformly samples** one value from each knob’s set – from a `List()` (discrete uniform) or from a `Range()` (continuous uniform). Sampling is **independently‑identically‑distributed (IID)**, and the process is repeated `num_runs` times to produce distinct combinations. |
+| **Key parameters controlling the process** | `configs` – must contain at least one knob expressed as a `List()`.<br>`trainer_type` – optional (e.g., `"SFT"`, `"DPO"`, `"GRPO"`). | `configs` – can contain `List()` **and/or** `Range()` knobs.<br>`num_runs` – total number of random combinations to generate.<br>`seed` – random‑seed for reproducibility (default = 42). |
+| **Error behavior** | If any knob is defined with `Range()`, the call errors out. | No error; `Range()` values are sampled uniformly. |
+
+**Summary**
+
+- **RFGridSearch** is a deterministic grid enumerator that only works with single values or explicit lists; it cannot handle continuous ranges.  
+- **RFRandomSearch** is a stochastic sampler that accepts single values, lists, **and** continuous ranges, drawing IID uniform samples for each run up to `num_runs`.
+
+These behaviours are documented in *configs.rst* (see the “Notes” sections for each function).
+
+Q5: How do I set up RapidFire AI for RAG evaluation on a machine without GPUs?
+Retrieved sources: walkthroughrag.rst, walkthroughft.rst
+Answer:
+**You can run RapidFire AI’s RAG‑evaluation stack on a CPU‑only machine – you only need a Python 3.12 environment and an OpenAI API key (no GPU drivers, CUDA, or self‑hosted models are required).**  
+
+Below is the exact sequence taken from the *walkthroughrag.rst* documentation.
+
+---
+
+### 1. Install the RapidFire AI package (CPU‑only)
+
+```bash
+# 1️⃣  Make sure you are on Python 3.12
+python3 --version          # must show 3.12.x
+
+# 2️⃣  Create a clean virtual‑env (optional but recommended)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3️⃣  Install the OSS package from PyPI (it pulls in all required deps)
+pip install rapidfireai
+
+# 4️⃣  Verify the installation
+rapidfireai --version      # should print the current version
+```
+
+*Source:* “Step 1: Install dependencies and package” – walkthroughrag.rst (chunks 4‑5).
+
+---
+
+### 2. Initialise the RAG‑evaluation environment
+
+```bash
+# Install the extra libraries that RapidFire uses for RAG evals
+rapidfireai init --evals
+```
+
+- Run this **once per virtual‑env** (or when you change GPU hardware).  
+- No GPU is needed; the command will only pull CPU‑compatible packages.
+
+*Source:* “initialize rapidfireai to use the correct dependencies for RAG evals” – walkthroughrag.rst (chunk 11).
+
+---
+
+### 3. Provide an OpenAI API key
+
+Since you are not using any self‑hosted embedding or generation models, RapidFire will call the OpenAI services for both embeddings and LLM generation. Supply the key via a config argument (the same way the GSM8K and SciFact tutorial notebooks do):
+
+```python
+from rapidfireai import RapidFireConfig
+
+cfg = RapidFireConfig(
+    openai_api_key="sk-XXXXXXXXXXXXXXXXXXXXXXXX"
+)
+```
+
+*Source:* “you must provide a valid OpenAI API key via a config argument as shown in the GSM8K and SciFact tutorial notebooks” – walkthroughrag.rst (chunks 3‑4‑5).
+
+---
+
+### 4. Start the services (frontend + API)
+
+```bash
+rapidfireai start
+```
+
+You should see output similar to:
+
+```
+... RapidFire Frontend is ready
+Open your browser and navigate to: http://0.0.0.0:8853
+```
+
+Open the URL in a local browser; the dashboard will be fully functional even though the machine has no GPU.
+
+*Source:* “Next start RapidFire AI services… rapidfireai start” – walkthroughrag.rst (chunk 11).
+
+---
+
+### 5. (Optional) Use Google Colab for a quick try‑out
+
+If you just want to experiment without any local install, the documentation also offers a pre‑configured Colab notebook:
+
+```
+https://tinyurl.com/rapidfireai-rag-colab
+```
+
+*Note:* Colab is limited to small models and datasets because it runs on free resources.
+
+*Source:* “Google Colab – Try RapidFire AI RAG instantly in your browser” – walkthroughrag.rst (chunks 2‑3‑4).
+
+---
+
+## Summary checklist for a GPU‑less machine
+
+| Step | Command / Action | What it does |
+|------|------------------|--------------|
+| 1️⃣   | `python3 -m venv .venv && source .venv/bin/activate` | Create isolated Python 3.12 env |
+| 2️⃣   | `pip install rapidfireai` | Install RapidFire AI core |
+| 3️⃣   | `rapidfireai init --evals` | Pull CPU‑only RAG‑eval dependencies |
+| 4️⃣   | Supply `openai_api_key` in a `RapidFireConfig` (or via env var `OPENAI_API_KEY`) | Enables OpenAI embedding & generation |
+| 5️⃣   | `rapidfireai start` | Launch frontend (http://0.0.0.0:8853) and API server
