@@ -1,0 +1,145 @@
+2026-05-08 12:29:52 | Experiment | INFO | experiment.py:165 | [discussion1-rag-docs-tuning:Experiment] Experiment discussion1-rag-docs-tuning created with Experiment ID: 3 at /home/rabhatia/rapidfireai/rapidfire_experiments/discussion1-rag-docs-tuning
+2026-05-08 12:30:11 | Experiment | INFO | metric_rfmetric_manager.py:55 | [discussion1-rag-docs-tuning:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-08 12:30:11 | Experiment | INFO | metric_rfmetric_manager.py:119 | [discussion1-rag-docs-tuning:Experiment] Creating MLflow experiment: discussion1-rag-docs-tuning
+2026-05-08 12:30:11 | Experiment | INFO | experiment.py:210 | [discussion1-rag-docs-tuning:Experiment] Initialized MetricLogger experiment: 2
+2026-05-08 12:30:11 | Experiment | INFO | experiment.py:226 | [discussion1-rag-docs-tuning:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-08 12:31:05 | ExperimentUtils | INFO | experiment_utils.py:180 | [discussion1-rag-docs-tuning:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-08 12:31:05 | ExperimentUtils | INFO | experiment_utils.py:188 | [discussion1-rag-docs-tuning:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-08 12:31:05 | Experiment | INFO | experiment.py:165 | [discussion1-rag-docs-tuning:Experiment] Experiment discussion1-rag-docs-tuning is currently running. Returning the same experiment object.
+2026-05-08 12:31:05 | Experiment | INFO | experiment.py:165 | [discussion1-rag-docs-tuning:Experiment] Any running tasks have been cancelled.
+2026-05-08 12:31:25 | Experiment | INFO | metric_rfmetric_manager.py:55 | [discussion1-rag-docs-tuning:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-08 12:31:25 | Experiment | INFO | metric_rfmetric_manager.py:119 | [discussion1-rag-docs-tuning:Experiment] Creating MLflow experiment: discussion1-rag-docs-tuning
+2026-05-08 12:31:25 | Experiment | WARNING | experiment.py:212 | [discussion1-rag-docs-tuning:Experiment] Failed to initialize MetricLogger: RESOURCE_ALREADY_EXISTS: Experiment(name=discussion1-rag-docs-tuning) already exists. Error: (sqlite3.IntegrityError) UNIQUE constraint failed: experiments.workspace, experiments.name
+[SQL: INSERT INTO experiments (name, workspace, artifact_location, lifecycle_stage, creation_time, last_update_time) VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: ('discussion1-rag-docs-tuning', 'default', '', 'active', 1778268685060, 1778268685060)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj). MetricLogger logging will be disabled.
+2026-05-08 12:31:25 | Experiment | INFO | experiment.py:226 | [discussion1-rag-docs-tuning:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-08 12:31:25 | Experiment | WARNING | experiment.py:381 | [discussion1-rag-docs-tuning:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-08 12:31:25 | Experiment | INFO | experiment.py:383 | [discussion1-rag-docs-tuning:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 2 actors)
+2026-05-08 12:31:25 | Experiment | INFO | experiment.py:392 | [discussion1-rag-docs-tuning:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-08 12:31:25 | Controller | INFO | controller.py:895 | [discussion1-rag-docs-tuning:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-08 12:31:25 | Controller | INFO | controller.py:900 | [discussion1-rag-docs-tuning:Controller] Received 4 pipeline configuration(s)
+2026-05-08 12:31:25 | Controller | INFO | controller.py:306 | [discussion1-rag-docs-tuning:Controller] No RAG contexts found in pipeline configs
+2026-05-08 12:31:25 | Controller | INFO | controller.py:920 | [discussion1-rag-docs-tuning:Controller] Created 2 query processing actors (generic pool)
+2026-05-08 12:31:25 | Experiment | ERROR | experiment.py:423 | [discussion1-rag-docs-tuning:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 923, in run_multi_pipeline_inference
+    pipeline_ids, pipeline_id_to_config = self._register_pipelines(config_leaves, db)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 621, in _register_pipelines
+    pipeline_id = db.create_pipeline(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/db/rf_db.py", line 522, in create_pipeline
+    encoded_config = encode_payload(pipeline_config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/utils/serialize.py", line 136, in encode_payload
+    return base64.b64encode(dill.dumps(payload)).decode("utf-8")
+                            ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 280, in dumps
+    dump(obj, file, protocol, byref, fmode, recurse, **kwds)#, strictio)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 252, in dump
+    Pickler(file, protocol, **_kwds).dump(obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 420, in dump
+    StockPickler.dump(self, obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 484, in dump
+    self.save(obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 558, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 1217, in save_module_dict
+    StockPickler.save_dict(pickler, obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 990, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 1014, in _batch_setitems
+    save(v)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 558, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 1985, in save_function
+    _save_with_postproc(pickler, (_create_function, (
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 1112, in _save_with_postproc
+    pickler._batch_setitems(iter(source.items()))
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 1014, in _batch_setitems
+    save(v)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 601, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 715, in save_reduce
+    save(state)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 558, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 1217, in save_module_dict
+    StockPickler.save_dict(pickler, obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 990, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 1014, in _batch_setitems
+    save(v)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 601, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 715, in save_reduce
+    save(state)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 558, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 1217, in save_module_dict
+    StockPickler.save_dict(pickler, obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 990, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 1019, in _batch_setitems
+    save(v)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 601, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 715, in save_reduce
+    save(state)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 558, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 1217, in save_module_dict
+    StockPickler.save_dict(pickler, obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 990, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 1019, in _batch_setitems
+    save(v)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 601, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 715, in save_reduce
+    save(state)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 558, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 1217, in save_module_dict
+    StockPickler.save_dict(pickler, obj)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 990, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 1014, in _batch_setitems
+    save(v)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/dill/_dill.py", line 414, in save
+    StockPickler.save(self, obj, save_persistent_id)
+  File "/opt/conda/envs/cse234/lib/python3.12/pickle.py", line 576, in save
+    rv = reduce(self.proto)
+         ^^^^^^^^^^^^^^^^^^
+TypeError: cannot pickle 'sqlite3.Connection' object

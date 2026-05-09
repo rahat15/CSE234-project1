@@ -1,0 +1,166 @@
+2026-05-08 13:38:48 | Experiment | INFO | experiment.py:165 | [discussion1-rag-docs-tuning-8configs:Experiment] Experiment discussion1-rag-docs-tuning-8configs created with Experiment ID: 5 at /home/rabhatia/rapidfireai/rapidfire_experiments/discussion1-rag-docs-tuning-8configs
+2026-05-08 13:39:06 | Experiment | INFO | metric_rfmetric_manager.py:55 | [discussion1-rag-docs-tuning-8configs:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-08 13:39:06 | Experiment | INFO | metric_rfmetric_manager.py:119 | [discussion1-rag-docs-tuning-8configs:Experiment] Creating MLflow experiment: discussion1-rag-docs-tuning-8configs
+2026-05-08 13:39:06 | Experiment | INFO | experiment.py:210 | [discussion1-rag-docs-tuning-8configs:Experiment] Initialized MetricLogger experiment: 4
+2026-05-08 13:39:06 | Experiment | INFO | experiment.py:226 | [discussion1-rag-docs-tuning-8configs:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-08 13:39:06 | Experiment | WARNING | experiment.py:381 | [discussion1-rag-docs-tuning-8configs:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-08 13:39:06 | Experiment | INFO | experiment.py:383 | [discussion1-rag-docs-tuning-8configs:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 2 actors)
+2026-05-08 13:39:06 | Experiment | INFO | experiment.py:392 | [discussion1-rag-docs-tuning-8configs:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-08 13:39:07 | Controller | INFO | controller.py:895 | [discussion1-rag-docs-tuning-8configs:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-08 13:39:07 | Controller | INFO | controller.py:900 | [discussion1-rag-docs-tuning-8configs:Controller] Received 8 pipeline configuration(s)
+2026-05-08 13:39:07 | Controller | INFO | controller.py:306 | [discussion1-rag-docs-tuning-8configs:Controller] No RAG contexts found in pipeline configs
+2026-05-08 13:39:07 | Controller | INFO | controller.py:920 | [discussion1-rag-docs-tuning-8configs:Controller] Created 2 query processing actors (generic pool)
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: cb02a2e0ed744bea9948dc097ef92f12, 1
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: 2612b7b7b8094b2aa2a786471824fefb, 2
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: 2f92d01e12b846b9972e89907ea53d09, 3
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: 31ea9c87f9f8412a9a12207c1f85bfca, 4
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: d02f3f415314459aa5d1be5f1886239f, 5
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: 41b1d8c5095c46f6aa1fa8e0ae505eb1, 6
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: ddee9d9a92b4445c924b4f79fda99ae3, 7
+2026-05-08 13:39:07 | Experiment | INFO | metric_rfmetric_manager.py:141 | [discussion1-rag-docs-tuning-8configs:Experiment] Created MLflow run: 941957438ed94e0993ee5d9b070245c8, 8
+2026-05-08 13:39:07 | Controller | INFO | controller.py:931 | [discussion1-rag-docs-tuning-8configs:Controller] Initialized scheduler with 8 pipelines, 2 actors, 4 shards
+2026-05-08 13:39:07 | Controller | INFO | controller.py:1118 | [discussion1-rag-docs-tuning-8configs:Controller] Created experiment-wide rate limiter actor for 8 OpenAI pipeline(s) with per-model limits (api-gpt-oss-120b: 120 RPM, 1000000 TPM)
+2026-05-08 13:39:07 | Controller | INFO | controller.py:1124 | [discussion1-rag-docs-tuning-8configs:Controller] Starting multi-pipeline inference scheduling...
+2026-05-08 13:39:08 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-08 13:39:31 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: b2e2162d)
+2026-05-08 13:39:31 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 1 for shard 0 (1 batches)
+2026-05-08 13:39:31 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Initializing new inference engine (config hash: b2e2162d)
+2026-05-08 13:39:44 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 2 completed shard 0 (1 batches, 12.05s)
+2026-05-08 13:39:44 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 1 for shard 0 (1 batches)
+2026-05-08 13:39:44 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:39:44 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 1 completed shard 0 (1 batches, 12.84s)
+2026-05-08 13:39:44 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 0 (1 batches)
+2026-05-08 13:39:44 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: b2e2162d)
+2026-05-08 13:39:45 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: 6e98d1e9)
+2026-05-08 13:39:56 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 3 completed shard 0 (1 batches, 12.70s)
+2026-05-08 13:39:56 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 1 for shard 0 (1 batches)
+2026-05-08 13:39:56 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:39:57 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 4 completed shard 0 (1 batches, 12.25s)
+2026-05-08 13:39:57 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 0 (1 batches)
+2026-05-08 13:39:57 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: 6e98d1e9)
+2026-05-08 13:39:58 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: b2e2162d)
+2026-05-08 13:40:05 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 5 completed shard 0 (1 batches, 8.18s)
+2026-05-08 13:40:05 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 1 for shard 0 (1 batches)
+2026-05-08 13:40:05 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:40:05 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 6 completed shard 0 (1 batches, 7.71s)
+2026-05-08 13:40:05 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 0 (1 batches)
+2026-05-08 13:40:06 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:40:15 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 7 completed shard 0 (1 batches, 9.71s)
+2026-05-08 13:40:15 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 1 for shard 1 (1 batches)
+2026-05-08 13:40:15 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:40:16 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 8 completed shard 0 (1 batches, 10.71s)
+2026-05-08 13:40:16 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-08 13:40:16 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:40:25 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 1 completed shard 1 (1 batches, 9.71s)
+2026-05-08 13:40:25 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 1 for shard 1 (1 batches)
+2026-05-08 13:40:25 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:40:42 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 2 completed shard 1 (1 batches, 25.24s)
+2026-05-08 13:40:42 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 3 completed shard 1 (1 batches, 17.22s)
+2026-05-08 13:40:42 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 1 (1 batches)
+2026-05-08 13:40:42 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: b2e2162d)
+2026-05-08 13:40:42 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: 6e98d1e9)
+2026-05-08 13:40:42 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 1 for shard 1 (1 batches)
+2026-05-08 13:40:42 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:40:56 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 5 completed shard 1 (1 batches, 13.05s)
+2026-05-08 13:40:56 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 1 for shard 1 (1 batches)
+2026-05-08 13:40:56 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:40:57 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 4 completed shard 1 (1 batches, 14.23s)
+2026-05-08 13:40:57 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 0 for shard 1 (1 batches)
+2026-05-08 13:40:57 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: 6e98d1e9)
+2026-05-08 13:40:57 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: b2e2162d)
+2026-05-08 13:41:08 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 7 completed shard 1 (1 batches, 10.54s)
+2026-05-08 13:41:08 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 1 (1 batches)
+2026-05-08 13:41:08 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:41:09 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 6 completed shard 1 (1 batches, 12.81s)
+2026-05-08 13:41:09 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 1 for shard 2 (1 batches)
+2026-05-08 13:41:09 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:41:20 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 8 completed shard 1 (1 batches, 12.25s)
+2026-05-08 13:41:20 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 2 (1 batches)
+2026-05-08 13:41:20 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:41:22 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 1 completed shard 2 (1 batches, 13.23s)
+2026-05-08 13:41:22 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 1 for shard 2 (1 batches)
+2026-05-08 13:41:22 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:41:33 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 2 completed shard 2 (1 batches, 12.72s)
+2026-05-08 13:41:33 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 2 (1 batches)
+2026-05-08 13:41:33 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: b2e2162d)
+2026-05-08 13:41:34 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: 6e98d1e9)
+2026-05-08 13:41:35 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 3 completed shard 2 (1 batches, 13.25s)
+2026-05-08 13:41:35 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 1 for shard 2 (1 batches)
+2026-05-08 13:41:35 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:41:45 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 4 completed shard 2 (1 batches, 11.21s)
+2026-05-08 13:41:45 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 2 (1 batches)
+2026-05-08 13:41:45 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: 6e98d1e9)
+2026-05-08 13:41:46 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: b2e2162d)
+2026-05-08 13:41:51 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 5 completed shard 2 (1 batches, 15.19s)
+2026-05-08 13:41:51 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 1 for shard 2 (1 batches)
+2026-05-08 13:41:51 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:41:58 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 6 completed shard 2 (1 batches, 11.70s)
+2026-05-08 13:41:58 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 2 (1 batches)
+2026-05-08 13:41:58 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:42:04 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 7 completed shard 2 (1 batches, 12.75s)
+2026-05-08 13:42:04 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 1 for shard 3 (1 batches)
+2026-05-08 13:42:04 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:42:09 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 8 completed shard 2 (1 batches, 11.71s)
+2026-05-08 13:42:09 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 3 (1 batches)
+2026-05-08 13:42:09 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:42:19 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 1 completed all 4 shards
+2026-05-08 13:42:19 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 1 completed shard 3 (1 batches, 15.23s)
+2026-05-08 13:42:19 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 1 for shard 3 (1 batches)
+2026-05-08 13:42:19 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:42:22 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 2 completed all 4 shards
+2026-05-08 13:42:22 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 2 completed shard 3 (1 batches, 12.73s)
+2026-05-08 13:42:22 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 3 (1 batches)
+2026-05-08 13:42:22 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: b2e2162d)
+2026-05-08 13:42:23 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: 6e98d1e9)
+2026-05-08 13:42:33 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 3 completed all 4 shards
+2026-05-08 13:42:33 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 3 completed shard 3 (1 batches, 14.14s)
+2026-05-08 13:42:33 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 1 for shard 3 (1 batches)
+2026-05-08 13:42:33 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:42:39 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 4 completed all 4 shards
+2026-05-08 13:42:39 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 4 completed shard 3 (1 batches, 16.26s)
+2026-05-08 13:42:39 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 3 (1 batches)
+2026-05-08 13:42:39 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Cleaning up old inference engine (hash: 6e98d1e9)
+2026-05-08 13:42:40 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Initializing new inference engine (config hash: b2e2162d)
+2026-05-08 13:42:46 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 5 completed all 4 shards
+2026-05-08 13:42:46 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 5 completed shard 3 (1 batches, 12.20s)
+2026-05-08 13:42:46 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 1 for shard 3 (1 batches)
+2026-05-08 13:42:46 | QueryProcessingActor-1 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-1] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:42:55 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 6 completed all 4 shards
+2026-05-08 13:42:55 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 6 completed shard 3 (1 batches, 15.22s)
+2026-05-08 13:42:55 | Controller | INFO | controller.py:1422 | [discussion1-rag-docs-tuning-8configs:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 3 (1 batches)
+2026-05-08 13:42:55 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [discussion1-rag-docs-tuning-8configs:QueryProcessingActor-0] Reusing existing inference engine (config hash: b2e2162d)
+2026-05-08 13:42:59 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 7 completed all 4 shards
+2026-05-08 13:42:59 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 7 completed shard 3 (1 batches, 12.69s)
+2026-05-08 13:43:07 | Controller | INFO | controller.py:1192 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 8 completed all 4 shards
+2026-05-08 13:43:07 | Controller | INFO | controller.py:1299 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 8 completed shard 3 (1 batches, 12.22s)
+2026-05-08 13:43:07 | Controller | INFO | controller.py:1386 | [discussion1-rag-docs-tuning-8configs:Controller] All pipelines completed all shards!
+2026-05-08 13:43:07 | Controller | INFO | controller.py:695 | [discussion1-rag-docs-tuning-8configs:Controller] Computing final metrics for all pipelines...
+2026-05-08 13:43:08 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: cb02a2e0ed744bea9948dc097ef92f12, 1 in rf_mlflow
+2026-05-08 13:43:08 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run cb02a2e0ed744bea9948dc097ef92f12 is not the active run, no local context to clear
+2026-05-08 13:43:08 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 1 (Pipeline 1) completed successfully
+2026-05-08 13:43:08 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: 2612b7b7b8094b2aa2a786471824fefb, 2 in rf_mlflow
+2026-05-08 13:43:08 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run 2612b7b7b8094b2aa2a786471824fefb is not the active run, no local context to clear
+2026-05-08 13:43:08 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 2 (Pipeline 2) completed successfully
+2026-05-08 13:43:08 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: 2f92d01e12b846b9972e89907ea53d09, 3 in rf_mlflow
+2026-05-08 13:43:08 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run 2f92d01e12b846b9972e89907ea53d09 is not the active run, no local context to clear
+2026-05-08 13:43:08 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 3 (Pipeline 3) completed successfully
+2026-05-08 13:43:08 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: 31ea9c87f9f8412a9a12207c1f85bfca, 4 in rf_mlflow
+2026-05-08 13:43:08 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run 31ea9c87f9f8412a9a12207c1f85bfca is not the active run, no local context to clear
+2026-05-08 13:43:08 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 4 (Pipeline 4) completed successfully
+2026-05-08 13:43:08 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: d02f3f415314459aa5d1be5f1886239f, 5 in rf_mlflow
+2026-05-08 13:43:08 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run d02f3f415314459aa5d1be5f1886239f is not the active run, no local context to clear
+2026-05-08 13:43:08 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 5 (Pipeline 5) completed successfully
+2026-05-08 13:43:08 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: 41b1d8c5095c46f6aa1fa8e0ae505eb1, 6 in rf_mlflow
+2026-05-08 13:43:08 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run 41b1d8c5095c46f6aa1fa8e0ae505eb1 is not the active run, no local context to clear
+2026-05-08 13:43:08 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 6 (Pipeline 6) completed successfully
+2026-05-08 13:43:09 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: ddee9d9a92b4445c924b4f79fda99ae3, 7 in rf_mlflow
+2026-05-08 13:43:09 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run ddee9d9a92b4445c924b4f79fda99ae3 is not the active run, no local context to clear
+2026-05-08 13:43:09 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 7 (Pipeline 7) completed successfully
+2026-05-08 13:43:09 | Experiment | INFO | metric_rfmetric_manager.py:190 | [discussion1-rag-docs-tuning-8configs:Experiment] Ending run: 941957438ed94e0993ee5d9b070245c8, 8 in rf_mlflow
+2026-05-08 13:43:09 | Experiment | WARNING | metric_mlflow_manager.py:101 | [discussion1-rag-docs-tuning-8configs:Experiment] Run 941957438ed94e0993ee5d9b070245c8 is not the active run, no local context to clear
+2026-05-08 13:43:09 | Controller | INFO | controller.py:853 | [discussion1-rag-docs-tuning-8configs:Controller] Pipeline 8 (Pipeline 8) completed successfully
+2026-05-08 13:43:09 | ExperimentUtils | INFO | experiment_utils.py:180 | [discussion1-rag-docs-tuning-8configs:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-08 13:43:09 | ExperimentUtils | INFO | experiment_utils.py:188 | [discussion1-rag-docs-tuning-8configs:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-08 13:43:09 | ExperimentUtils | INFO | experiment_utils.py:154 | [discussion1-rag-docs-tuning-8configs:ExperimentUtils] Experiment discussion1-rag-docs-tuning-8configs ended
+2026-05-08 13:43:11 | Experiment | INFO | experiment.py:574 | [discussion1-rag-docs-tuning-8configs:Experiment] All actors shut down
+2026-05-08 13:43:11 | Experiment | INFO | experiment.py:575 | [discussion1-rag-docs-tuning-8configs:Experiment] Dispatcher will automatically shut down (daemon thread)

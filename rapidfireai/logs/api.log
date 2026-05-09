@@ -1,0 +1,26 @@
+INFO 05-08 11:34:35 [importing.py:44] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+INFO 05-08 11:34:35 [importing.py:68] Triton not installed or not compatible; certain GPU-related functions will not be available.
+[2026-05-08 11:34:38 -0700] [14800] [INFO] Starting gunicorn 25.3.0
+[2026-05-08 11:34:38 -0700] [14800] [INFO] Listening at: http://127.0.0.1:8851 (14800)
+[2026-05-08 11:34:38 -0700] [14800] [INFO] Using worker: sync
+[2026-05-08 11:34:38 -0700] [15635] [INFO] Booting worker with pid: 15635
+[2026-05-08 11:34:38 -0700] [14800] [INFO] Control socket listening at /home/rabhatia/.gunicorn/gunicorn.ctl
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 11:38:07 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 15:48:06 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 15:48:06 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 15:52:27 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 16:01:23 -0700] [14800] [INFO] Handling signal: winch
+[2026-05-08 16:01:25 -0700] [14800] [INFO] Handling signal: winch

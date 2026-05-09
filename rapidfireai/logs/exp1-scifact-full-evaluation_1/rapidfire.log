@@ -1,0 +1,232 @@
+2026-05-08 11:36:01 | Experiment | INFO | experiment.py:165 | [exp1-scifact-full-evaluation_1:Experiment] An experiment with the same name already exists. Created a new experiment 'exp1-scifact-full-evaluation_1' with Experiment ID: 2 at /home/rabhatia/rapidfireai/rapidfire_experiments/exp1-scifact-full-evaluation_1
+2026-05-08 11:36:20 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp1-scifact-full-evaluation_1:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-08 11:36:20 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp1-scifact-full-evaluation_1:Experiment] Creating MLflow experiment: exp1-scifact-full-evaluation_1
+2026-05-08 11:36:20 | Experiment | INFO | experiment.py:210 | [exp1-scifact-full-evaluation_1:Experiment] Initialized MetricLogger experiment: 1
+2026-05-08 11:36:20 | Experiment | INFO | experiment.py:226 | [exp1-scifact-full-evaluation_1:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-08 11:36:21 | Experiment | WARNING | experiment.py:381 | [exp1-scifact-full-evaluation_1:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-08 11:36:21 | Experiment | INFO | experiment.py:383 | [exp1-scifact-full-evaluation_1:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 2 actors)
+2026-05-08 11:36:21 | Experiment | INFO | experiment.py:392 | [exp1-scifact-full-evaluation_1:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-08 11:36:22 | Controller | INFO | controller.py:895 | [exp1-scifact-full-evaluation_1:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-08 11:36:22 | Controller | INFO | controller.py:900 | [exp1-scifact-full-evaluation_1:Controller] Received 4 pipeline configuration(s)
+2026-05-08 11:36:22 | Controller | INFO | controller.py:309 | [exp1-scifact-full-evaluation_1:Controller] Found 1 unique RAG context(s)
+2026-05-08 11:36:22 | Controller | INFO | controller.py:320 | [exp1-scifact-full-evaluation_1:Controller] Will build new context 70fee08b...
+2026-05-08 11:36:22 | Controller | INFO | controller.py:346 | [exp1-scifact-full-evaluation_1:Controller] Building 1 context(s) in parallel...
+2026-05-08 11:36:22 | Controller | INFO | controller.py:373 | [exp1-scifact-full-evaluation_1:Controller] Creating 1 DocProcessingActor(s) for parallel processing
+2026-05-08 11:36:23 | Controller | INFO | controller.py:461 | [exp1-scifact-full-evaluation_1:Controller] Submitted 1 build task(s) in parallel
+2026-05-08 11:36:44 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1-scifact-full-evaluation_1:DocProcessingActor] DocProcessingActor initialized
+2026-05-08 11:36:46 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1-scifact-full-evaluation_1:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-08 11:36:46 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1-scifact-full-evaluation_1:DocProcessingActor] Building document index...
+2026-05-08 11:36:47 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:36:51 | DocProcessingActor | INFO | doc_actor.py:109 | [exp1-scifact-full-evaluation_1:DocProcessingActor] Document index built successfully
+2026-05-08 11:36:51 | DocProcessingActor | INFO | doc_actor.py:134 | [exp1-scifact-full-evaluation_1:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-08 11:36:51 | DocProcessingActor | INFO | doc_actor.py:144 | [exp1-scifact-full-evaluation_1:DocProcessingActor] FAISS index serialized: 606720 bytes
+2026-05-08 11:36:51 | DocProcessingActor | INFO | doc_actor.py:189 | [exp1-scifact-full-evaluation_1:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-08 11:36:51 | Controller | INFO | controller.py:482 | [exp1-scifact-full-evaluation_1:Controller] Built context 1 (70fee08b...) successfully in 29.15s
+2026-05-08 11:36:51 | Controller | INFO | controller.py:523 | [exp1-scifact-full-evaluation_1:Controller] Completed parallel context building for 1 context(s)
+2026-05-08 11:36:51 | Controller | INFO | controller.py:920 | [exp1-scifact-full-evaluation_1:Controller] Created 2 query processing actors (generic pool)
+2026-05-08 11:36:51 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp1-scifact-full-evaluation_1:Experiment] Created MLflow run: da56049c672c4487bdc557fcdb0c28fc, 1
+2026-05-08 11:36:51 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp1-scifact-full-evaluation_1:Experiment] Created MLflow run: a69dcfaa714f4cf6af2738aace6dc2c6, 2
+2026-05-08 11:36:51 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp1-scifact-full-evaluation_1:Experiment] Created MLflow run: 9a701155b3b143bba0bdfc4143ccccf1, 3
+2026-05-08 11:36:51 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp1-scifact-full-evaluation_1:Experiment] Created MLflow run: 2680728e9ece4750ae1d4bd23d873e1e, 4
+2026-05-08 11:36:51 | Controller | INFO | controller.py:931 | [exp1-scifact-full-evaluation_1:Controller] Initialized scheduler with 4 pipelines, 2 actors, 4 shards
+2026-05-08 11:36:51 | Controller | WARNING | controller.py:1078 | [exp1-scifact-full-evaluation_1:Controller] Model api-gpt-oss-120b has inconsistent rate limits across pipelines. Using first encountered values: {'rpm': 10000, 'tpm': 10000000}
+2026-05-08 11:36:51 | Controller | WARNING | controller.py:1078 | [exp1-scifact-full-evaluation_1:Controller] Model api-gpt-oss-120b has inconsistent rate limits across pipelines. Using first encountered values: {'rpm': 10000, 'tpm': 10000000}
+2026-05-08 11:36:51 | Controller | INFO | controller.py:1118 | [exp1-scifact-full-evaluation_1:Controller] Created experiment-wide rate limiter actor for 4 OpenAI pipeline(s) with per-model limits (api-gpt-oss-120b: 10000 RPM, 10000000 TPM)
+2026-05-08 11:36:51 | Controller | INFO | controller.py:1124 | [exp1-scifact-full-evaluation_1:Controller] Starting multi-pipeline inference scheduling...
+2026-05-08 11:36:51 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-08 11:37:14 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:37:14 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:37:14 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:37:14 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:37:14 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:37:14 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:37:15 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:37:16 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:37:16 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 1 for shard 0 (1 batches)
+2026-05-08 11:37:16 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:37:16 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:37:16 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:37:16 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:37:16 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:37:16 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:37:16 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:37:18 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:37:39 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 1 completed shard 0 (1 batches, 23.19s)
+2026-05-08 11:37:39 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-05-08 11:37:39 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:37:40 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:37:40 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:37:40 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:37:40 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:37:40 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:37:40 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:37:40 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:37:41 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:37:43 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 2 completed shard 0 (1 batches, 24.95s)
+2026-05-08 11:37:43 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 1 for shard 0 (1 batches)
+2026-05-08 11:37:43 | QueryProcessingActor-1 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:37:43 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:37:43 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:37:43 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:37:43 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:37:43 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:37:43 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:37:43 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:37:45 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:38:03 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 3 completed shard 0 (1 batches, 21.31s)
+2026-05-08 11:38:03 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-08 11:38:03 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Cleaning up old inference engine (hash: aa68f055)
+2026-05-08 11:38:04 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:38:04 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:38:04 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:38:04 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:38:04 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:38:04 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:38:04 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:38:22 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:38:22 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 4 completed shard 0 (1 batches, 37.46s)
+2026-05-08 11:38:22 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 1 for shard 1 (1 batches)
+2026-05-08 11:38:22 | QueryProcessingActor-1 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Cleaning up old inference engine (hash: aa68f055)
+2026-05-08 11:38:23 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:38:23 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:38:23 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:38:23 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:38:23 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:38:23 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:38:23 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:38:24 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:38:39 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 1 completed shard 1 (1 batches, 17.14s)
+2026-05-08 11:38:40 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 2 completed shard 1 (1 batches, 15.19s)
+2026-05-08 11:38:40 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 1 (1 batches)
+2026-05-08 11:38:40 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:38:41 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:38:41 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:38:41 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:38:41 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:38:41 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:38:41 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:38:41 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:38:42 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:38:42 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 1 for shard 1 (1 batches)
+2026-05-08 11:38:42 | QueryProcessingActor-1 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:38:42 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:38:42 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:38:42 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:38:42 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:38:42 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:38:42 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:38:42 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:38:44 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:38:58 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 3 completed shard 1 (1 batches, 15.90s)
+2026-05-08 11:38:58 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-08 11:38:58 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Cleaning up old inference engine (hash: aa68f055)
+2026-05-08 11:38:59 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:38:59 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:38:59 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:38:59 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:38:59 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:38:59 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:38:59 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:39:00 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:39:00 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 4 completed shard 1 (1 batches, 16.27s)
+2026-05-08 11:39:00 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 1 for shard 2 (1 batches)
+2026-05-08 11:39:00 | QueryProcessingActor-1 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Cleaning up old inference engine (hash: aa68f055)
+2026-05-08 11:39:01 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:39:01 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:39:01 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:39:01 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:39:01 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:39:01 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:39:01 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:39:02 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:39:17 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 1 completed shard 2 (1 batches, 17.21s)
+2026-05-08 11:39:17 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 2 (1 batches)
+2026-05-08 11:39:17 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:39:18 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:39:18 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:39:18 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:39:18 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:39:19 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:39:19 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:39:19 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:39:20 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:39:20 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 2 completed shard 2 (1 batches, 17.69s)
+2026-05-08 11:39:20 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 1 for shard 2 (1 batches)
+2026-05-08 11:39:20 | QueryProcessingActor-1 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:39:21 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:39:21 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:39:21 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:39:21 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:39:21 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:39:21 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:39:21 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:39:22 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:39:37 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 3 completed shard 2 (1 batches, 17.07s)
+2026-05-08 11:39:37 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 3 (1 batches)
+2026-05-08 11:39:37 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Cleaning up old inference engine (hash: aa68f055)
+2026-05-08 11:39:38 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:39:38 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:39:38 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:39:38 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:39:38 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:39:38 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:39:38 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:39:39 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:39:45 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 4 completed shard 2 (1 batches, 22.89s)
+2026-05-08 11:39:45 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 1 for shard 3 (1 batches)
+2026-05-08 11:39:45 | QueryProcessingActor-1 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Cleaning up old inference engine (hash: aa68f055)
+2026-05-08 11:39:46 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: b65ce3fd)
+2026-05-08 11:39:46 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:39:46 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:39:46 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:39:46 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:39:46 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:39:46 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:39:47 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:40:00 | Controller | INFO | controller.py:1192 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 1 completed all 4 shards
+2026-05-08 11:40:00 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 1 completed shard 3 (1 batches, 20.68s)
+2026-05-08 11:40:00 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 3 (1 batches)
+2026-05-08 11:40:00 | QueryProcessingActor-0 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:40:01 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:40:01 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:40:01 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:40:01 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 11:40:01 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 11:40:01 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 11:40:01 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:40:02 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 11:40:08 | Controller | INFO | controller.py:1192 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 2 completed all 4 shards
+2026-05-08 11:40:08 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 2 completed shard 3 (1 batches, 20.19s)
+2026-05-08 11:40:08 | Controller | INFO | controller.py:1422 | [exp1-scifact-full-evaluation_1:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 1 for shard 3 (1 batches)
+2026-05-08 11:40:08 | QueryProcessingActor-1 | INFO | query_actor.py:142 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Cleaning up old inference engine (hash: b65ce3fd)
+2026-05-08 11:40:08 | QueryProcessingActor-1 | INFO | query_actor.py:165 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Initializing new inference engine (config hash: aa68f055)
+2026-05-08 11:40:08 | QueryProcessingActor-1 | INFO | query_actor.py:198 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 11:40:08 | QueryProcessingActor-1 | INFO | query_actor.py:211 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 11:40:08 | QueryProcessingActor-1 | INFO | query_actor.py:215 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Deserializing FAISS index for this actor...
+2026-05-08 11:40:08 | QueryProcessingActor-1 | INFO | query_actor.py:230 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Created independent FAISS vector store for this actor
+2026-05-08 11:40:08 | QueryProcessingActor-1 | INFO | query_actor.py:260 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated retriever with search_type=mmr
+2026-05-08 11:40:08 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-08 11:40:10 | QueryProcessingActor-1 | INFO | query_actor.py:277 | [exp1-scifact-full-evaluation_1:QueryProcessingActor-1] Recreated RAG spec with retrieval mode
+2026-05-08 11:40:23 | Controller | INFO | controller.py:1192 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 3 completed all 4 shards
+2026-05-08 11:40:23 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 3 completed shard 3 (1 batches, 21.22s)
+2026-05-08 11:40:26 | Controller | INFO | controller.py:1192 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 4 completed all 4 shards
+2026-05-08 11:40:26 | Controller | INFO | controller.py:1299 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 4 completed shard 3 (1 batches, 16.18s)
+2026-05-08 11:40:26 | Controller | INFO | controller.py:1386 | [exp1-scifact-full-evaluation_1:Controller] All pipelines completed all shards!
+2026-05-08 11:40:26 | Controller | INFO | controller.py:695 | [exp1-scifact-full-evaluation_1:Controller] Computing final metrics for all pipelines...
+2026-05-08 11:40:26 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp1-scifact-full-evaluation_1:Experiment] Ending run: da56049c672c4487bdc557fcdb0c28fc, 1 in rf_mlflow
+2026-05-08 11:40:26 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp1-scifact-full-evaluation_1:Experiment] Run da56049c672c4487bdc557fcdb0c28fc is not the active run, no local context to clear
+2026-05-08 11:40:26 | Controller | INFO | controller.py:853 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 1 (Pipeline 1) completed successfully
+2026-05-08 11:40:26 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp1-scifact-full-evaluation_1:Experiment] Ending run: a69dcfaa714f4cf6af2738aace6dc2c6, 2 in rf_mlflow
+2026-05-08 11:40:26 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp1-scifact-full-evaluation_1:Experiment] Run a69dcfaa714f4cf6af2738aace6dc2c6 is not the active run, no local context to clear
+2026-05-08 11:40:26 | Controller | INFO | controller.py:853 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 2 (Pipeline 2) completed successfully
+2026-05-08 11:40:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp1-scifact-full-evaluation_1:Experiment] Ending run: 9a701155b3b143bba0bdfc4143ccccf1, 3 in rf_mlflow
+2026-05-08 11:40:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp1-scifact-full-evaluation_1:Experiment] Run 9a701155b3b143bba0bdfc4143ccccf1 is not the active run, no local context to clear
+2026-05-08 11:40:27 | Controller | INFO | controller.py:853 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 3 (Pipeline 3) completed successfully
+2026-05-08 11:40:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp1-scifact-full-evaluation_1:Experiment] Ending run: 2680728e9ece4750ae1d4bd23d873e1e, 4 in rf_mlflow
+2026-05-08 11:40:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp1-scifact-full-evaluation_1:Experiment] Run 2680728e9ece4750ae1d4bd23d873e1e is not the active run, no local context to clear
+2026-05-08 11:40:27 | Controller | INFO | controller.py:853 | [exp1-scifact-full-evaluation_1:Controller] Pipeline 4 (Pipeline 4) completed successfully
+2026-05-08 11:40:27 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1-scifact-full-evaluation_1:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-08 11:40:27 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1-scifact-full-evaluation_1:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-08 11:40:27 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp1-scifact-full-evaluation_1:ExperimentUtils] Experiment exp1-scifact-full-evaluation_1 ended
+2026-05-08 11:40:29 | Experiment | INFO | experiment.py:574 | [exp1-scifact-full-evaluation_1:Experiment] All actors shut down
+2026-05-08 11:40:29 | Experiment | INFO | experiment.py:575 | [exp1-scifact-full-evaluation_1:Experiment] Dispatcher will automatically shut down (daemon thread)

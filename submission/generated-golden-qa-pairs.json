@@ -1,0 +1,175 @@
+[
+  {
+    "question_id": 1,
+    "question": "Why might running RAG evaluations with RapidFire AI's online aggregation produce more reliable config comparisons than traditional batch evals that downsample data?",
+    "reference_answer": "Traditional downsampling introduces variance from one static snapshot, potentially leading to wrong conclusions especially with overfitting-prone LLMs. In contrast, RapidFire AI's shard-based adaptive execution with online aggregation provides running metric estimates with confidence intervals across multiple shards. This offers multiple independent samples rather than a single volatile downsample, providing maximum statistical rigor while enabling dynamic control to stop poor configs and clone promising ones in real time.",
+    "source_evidence": [
+      {"file": "difference.rst", "lines": [91, 120]},
+      {"file": "onlineagg.rst", "lines": [1, 30]}
+    ]
+  },
+  {
+    "question_id": 2,
+    "question": "In a RAG pipeline using RFLangChainRagSpec, when should you enable GPU-accelerated search versus using the default CPU-based approach?",
+    "reference_answer": "Enable GPU-accelerated search (enable_gpu_search=True) when using FAISS and you have GPU resources available and want exact search via GPU-optimized IndexFlatL2. This is beneficial for smaller corpora requiring exact similarity matching. The default CPU-based FAISS uses an approximate HNSW index suitable for larger corpora and is less resource-intensive. GPU search requires the faiss-gpu package and CUDA-compatible GPU. Choose based on your corpus size, exact vs. approximate search needs, and available GPU memory.",
+    "source_evidence": [
+      {"file": "ragspecs.rst", "lines": [95, 105]},
+      {"file": "rag_scifact.rst", "lines": [40, 55]}
+    ]
+  },
+  {
+    "question_id": 3,
+    "question": "What is the key difference between Read mode and Update mode when configuring external vector stores like Pinecone or PGVector in RFLangChainRagSpec?",
+    "reference_answer": "Read mode retrieves from a pre-existing index/collection without modifying it, requiring pre-existing index/namespace names to be specified. This is useful for iterative experimentation where you preprocess and embed a corpus once, then run many retrieval/generation configurations against the same fixed index. Update mode adds new documents to an existing index from additional base documents provided via document_loader. The key distinction is that Read mode is immutable while Update mode appends new content.",
+    "source_evidence": [
+      {"file": "ragspecs.rst", "lines": [56, 98]},
+      {"file": "rag_fiqa.rst", "lines": [49, 59]}
+    ]
+  },
+  {
+    "question_id": 4,
+    "question": "How does the preprocess_fn function enable retrieval evaluation in RAG pipelines, and what metadata becomes accessible to the function?",
+    "reference_answer": "The preprocess_fn receives the unserialized documents retrieved by the RAG pipeline via rag.get_context(serialize=False). Each Document object has a .metadata dict that contains fields ingested via metadata_func in the document loader. For example, in FiQA, the 'corpus_id' metadata field is accessible on each Document's metadata after retrieval, allowing the function to extract retrieved document IDs for retrieval evaluation metrics without relying solely on generation quality.",
+    "source_evidence": [
+      {"file": "evalsfunctions.rst", "lines": [8, 50]}
+    ]
+  },
+  {
+    "question_id": 5,
+    "question": "What are the three confidence interval strategies supported by online aggregation in RapidFire AI evals, and when is each most appropriate?",
+    "reference_answer": "RapidFire AI supports three strategies: (1) Normal Approximation (default) using Central Limit Theorem, suitable for non-trivial sample sizes (n > 30) with tight intervals when assumptions hold; (2) Wilson Score, better for small sample sizes or metrics near 0/1 boundaries, more robust for extreme proportions; (3) Hoeffding Bounds, best for maximum safety with guaranteed coverage making no distributional assumptions but producing typically loose intervals. All support optional Finite Population Correction (FPC) for sampling without replacement.",
+    "source_evidence": [
+      {"file": "onlineagg.rst", "lines": [80, 198]}
+    ]
+  },
+  {
+    "question_id": 6,
+    "question": "Why does RapidFire AI's adaptive execution engine reduce the total time to compare multiple configs compared to sequential execution, and what is the overhead cost?",
+    "reference_answer": "RapidFire AI shards the dataset into chunks and schedules all runs on one shard at a time instead of sequentially running configs to completion. This enables automatic adapter and base model swapping across GPUs via efficient shared memory-based caching. Before config 3 even starts in sequential execution, RapidFire AI already shows learning behaviors of all configs on the first 2-3 chunks. The swapping overhead is minimal, less than 5% of runtime, enabling comparison of many configs in roughly the time to compare few sequentially.",
+    "source_evidence": [
+      {"file": "difference.rst", "lines": [4, 45]}
+    ]
+  },
+  {
+    "question_id": 7,
+    "question": "In RFLangChainRagSpec, how do the document_loader and vector_store_cfg arguments determine whether preprocessing is triggered?",
+    "reference_answer": "With Preprocessing: Both document_loader and vector_store_cfg (or defaults) are provided, creating Document Preprocessing workers that load documents, split them (if text_splitter provided), embed chunks, and store in the vector store. Without Preprocessing: document_loader is absent while optional vector_store_cfg with pre-existing index/collection names or optional retriever is provided, creating only Query Processing workers that retrieve from the existing store. The presence of document_loader is the key trigger.",
+    "source_evidence": [
+      {"file": "ragspecs.rst", "lines": [18, 40]}
+    ]
+  },
+  {
+    "question_id": 8,
+    "question": "How do search_cfg parameters interact differently for similarity, similarity_score_threshold, and mmr search types in RFLangChainRagSpec?",
+    "reference_answer": "All three support 'k' (number of documents to retrieve, default 5) and optional 'filter' criteria. similarity_score_threshold additionally accepts 'score_threshold' for minimum similarity score filtering. mmr (Maximum Marginal Relevance) additionally accepts 'fetch_k' (documents to fetch before reranking, default 20) for diversity-aware retrieval and 'lambda_mult' (diversity parameter balancing relevance vs. diversity, default 0.5). The choice affects retrieval behavior: standard cosine retrieves most similar, SST applies a quality gate, and MMR optimizes for both relevance and diversity.",
+    "source_evidence": [
+      {"file": "ragspecs.rst", "lines": [103, 140]}
+    ]
+  },
+  {
+    "question_id": 9,
+    "question": "Why is providing a custom document_template in RFLangChainRagSpec important for datasets like SciFact, and what does it control?",
+    "reference_answer": "The document_template is an optional function that formats each retrieved Document for context injection into prompts. SciFact requires custom templates because it needs to include document titles (a metadata field) alongside content. The default template formats all metadata as 'key: value' pairs, but for domain-specific datasets, custom templates control what metadata fields are included and how they're formatted. For SciFact with title metadata, a custom template ensures titles appear prominently in the retrieved context for claim verification.",
+    "source_evidence": [
+      {"file": "ragspecs.rst", "lines": [180, 210]},
+      {"file": "rag_scifact.rst", "lines": [40, 65]}
+    ]
+  },
+  {
+    "question_id": 10,
+    "question": "How do RFPromptManager's semantic similarity-based example selection improve few-shot prompting compared to random or fixed example selection?",
+    "reference_answer": "RFPromptManager uses embedding-based semantic similarity to dynamically select the k most relevant examples for each input query from an example pool. This is superior to random or fixed selection because it tailors examples to the specific query's semantic context, improving task performance. The system accepts embedding_cfg to compute similarities and example_selector_cls to define selection strategy (semantic similarity or MaxMarginalRelevance for diversity). This adaptive selection ensures few-shot examples are contextually aligned with the query.",
+    "source_evidence": [
+      {"file": "promptothers.rst", "lines": [18, 45]},
+      {"file": "rag_gsm8k.rst", "lines": [40, 65]}
+    ]
+  },
+  {
+    "question_id": 11,
+    "question": "What procedural workflow is required to set up RapidFire AI for RAG evaluations on a CPU-only machine with OpenAI APIs?",
+    "reference_answer": "For RAG/context engineering with only closed model APIs like OpenAI, GPUs are not needed. The workflow is: (1) Install Python 3.12+ and create venv, then 'pip install rapidfireai'; (2) Run 'rapidfireai init --evals' to initialize for RAG evals (one-time per venv); (3) Run 'rapidfireai start' to start the frontend and API server; (4) Download tutorial notebooks; (5) In notebooks, run cells for imports, dataset loading, RAG/prompt specs, eval functions, generator config, and launch evals with run_evals(); (6) Monitor metrics in the in-notebook table and IC Ops panel. Starting the server is optional but recommended for dashboard visualization.",
+    "source_evidence": [
+      {"file": "walkthroughrag.rst", "lines": [29, 103]},
+      {"file": "walkthroughrag.rst", "lines": [121, 240]}
+    ]
+  },
+  {
+    "question_id": 12,
+    "question": "What tradeoffs should you consider when choosing between multiple OpenAI models (e.g., gpt-5-mini vs gpt-4o) versus varying retrieval parameters in a RAG experiment?",
+    "reference_answer": "Varying generator models tests the impact of model capability and reasoning complexity on generation quality. Varying retrieval parameters (like reranking top-n, chunk size, or search algorithm) tests the impact of context quality and relevance on generation. In FiQA, using 2 models × 2 chunk sizes × 2 reranking top-n values yields 8 configs. The tradeoff is that varying retrieval is often faster to test (no new model inference) but may have smaller effect sizes, while varying models tests fundamental capability but incurs higher computational cost. Experimenting with both provides holistic insights.",
+    "source_evidence": [
+      {"file": "rag_fiqa.rst", "lines": [20, 50]},
+      {"file": "rag_scifact.rst", "lines": [50, 80]}
+    ]
+  },
+  {
+    "question_id": 13,
+    "question": "In a multi-GPU setup, how does RapidFire AI's scheduler handle task parallelism differently than traditional sequential or data parallel approaches?",
+    "reference_answer": "Traditional sequential execution runs one config at a time per GPU. Data parallelism (DDP/FSDP) duplicates one config across GPUs. Task parallelism runs different configs on different GPUs. RapidFire AI's scheduler automatically navigates multiple GPUs to optimize utilization across all configs simultaneously, avoiding GPU underutilization common in task parallelism. It shards data and schedules all runs on one shard at a time with efficient adapter/model swapping, managing GPU placement automatically. This removes the DevOps burden of manual scheduling and keeps GPUs busy on productive configs.",
+    "source_evidence": [
+      {"file": "difference.rst", "lines": [61, 90]}
+    ]
+  },
+  {
+    "question_id": 14,
+    "question": "What is the relationship between reranker_cfg's top_n parameter and the search_cfg's k parameter in retrieval pipelines, and what happens if they conflict?",
+    "reference_answer": "The search_cfg's 'k' parameter determines how many documents are initially retrieved from the vector store (default 5). The reranker_cfg's 'top_n' parameter specifies how many of those retrieved documents to keep after reranking. If top_n exceeds k, the reranker cannot produce top_n documents since only k were retrieved. Best practice is to set k >= top_n to ensure the reranker has enough candidates to select from. In FiQA, using top-15 initial retrieval (k=15) with top-5 final documents (top_n=5) ensures the cross-encoder reranker has sufficient context.",
+    "source_evidence": [
+      {"file": "ragspecs.rst", "lines": [103, 140]},
+      {"file": "rag_fiqa.rst", "lines": [35, 50]}
+    ]
+  },
+  {
+    "question_id": 15,
+    "question": "What are the computational and cost implications of choosing FAISS versus Pinecone versus PGVector for large-scale RAG experiments?",
+    "reference_answer": "FAISS is in-memory, fast, and requires no external setup or cost, but is not persistent and only supports Create mode. For one-off experiments on limited data, FAISS is most efficient. Pinecone is cloud-hosted, supports persistent Read/Update modes, and costs by API calls and storage; best for long-lived shared indexes across many experiments. PGVector is self-hosted on PostgreSQL, supports persistent Read/Update modes, and costs only infrastructure; best for on-premises or cost-sensitive deployments with IT infrastructure. For iterative experimentation over large corpora, persistent stores (Pinecone/PGVector) in Read mode allow preprocessing once and many config experiments, amortizing embedding costs.",
+    "source_evidence": [
+      {"file": "ragspecs.rst", "lines": [56, 100]},
+      {"file": "rag_fiqa.rst", "lines": [49, 90]}
+    ]
+  },
+  {
+    "question_id": 16,
+    "question": "How do the GSM8K, FiQA, and SciFact tutorial notebooks differ in their use of embedding and generation models, and what does each choice enable?",
+    "reference_answer": "FiQA uses all self-hosted open models (sentence-transformers for embeddings, Qwen for generation) requiring GPUs but offering full control and no API costs. GSM8K uses hybrid approach (sentence-transformers embeddings, OpenAI generation) balancing resource efficiency with model capability. SciFact uses all closed APIs (OpenAI for both embeddings and generation) requiring no GPU, only an API key, enabling RAG on CPU-only machines. The choices reflect tradeoffs: self-hosted offers control and cost for GPU availability, hybrid balances resource needs, and closed APIs maximize accessibility but incur per-token costs.",
+    "source_evidence": [
+      {"file": "rag_fiqa.rst", "lines": [1, 30]},
+      {"file": "rag_gsm8k.rst", "lines": [1, 30]},
+      {"file": "rag_scifact.rst", "lines": [1, 30]}
+    ]
+  },
+  {
+    "question_id": 17,
+    "question": "Why might online aggregation with Dynamic IC Ops enable exploring more configs than traditional sequential experiments in roughly the same wall-clock time?",
+    "reference_answer": "Traditional sequential execution waits for each config to process the full dataset before starting the next. Online aggregation with IC Ops enables stopping poor-performing configs early once confidence intervals show statistical inferiority, freeing GPU resources. High-performing configs can be cloned with modified hyperparameters to test variations. This dynamic reallocation means instead of comparing 4 configs sequentially on full data, you might stop 2 poor configs on shard 3-4, clone 1 high performer into 2 variants, and run those on remaining shards. The result: exploring 8-14 configs worth of variations in roughly the time to compare 4 sequentially.",
+    "source_evidence": [
+      {"file": "difference.rst", "lines": [30, 60]},
+      {"file": "onlineagg.rst", "lines": [40, 80]}
+    ]
+  },
+  {
+    "question_id": 18,
+    "question": "In the FiQA RAG tutorial, how are retrieved document corpus IDs used for retrieval evaluation, and why can't this be done with serialized documents alone?",
+    "reference_answer": "The preprocess_fn retrieves documents using rag.get_context(serialize=False) to access unserialized Document objects with their .metadata dicts containing corpus_id fields ingested via metadata_func in the document loader. These IDs are extracted for retrieval evaluation metrics that assess whether the correct documents were retrieved (precision, recall of retrieval). Serialized documents lose this metadata structure, containing only formatted text strings. By preserving metadata through preprocessing, the pipeline can evaluate both retrieval quality (did we retrieve the right documents?) and generation quality (did we generate correct answers?), enabling comprehensive RAG pipeline analysis.",
+    "source_evidence": [
+      {"file": "evalsfunctions.rst", "lines": [26, 60]},
+      {"file": "rag_fiqa.rst", "lines": [20, 40]}
+    ]
+  },
+  {
+    "question_id": 19,
+    "question": "What does the postprocess_fn enable that cannot be done within generation, and how does it relate to metric computation?",
+    "reference_answer": "The postprocess_fn is optional and operates after generation but before metric computation, allowing extraction of structured information from generated text, addition of ground truth data, or transformations needed for metrics. For example, in SciFact, postprocess_fn extracts SUPPORT/CONTRADICT/NOINFO labels from generated text using regex before computing classification metrics. In FiQA, it adds ground_truth_documents for retrieval evaluation. This separation enables flexible metric computation: the system can generate free-form text, postprocess_fn converts it to structured format, and compute_metrics_fn evaluates against ground truth. This pipeline design decouples generation format from metric requirements.",
+    "source_evidence": [
+      {"file": "evalsfunctions.rst", "lines": [120, 160]}
+    ]
+  },
+  {
+    "question_id": 20,
+    "question": "How does RapidFire AI's online aggregation with confidence intervals help prevent premature decisions to stop configs compared to simple threshold-based stopping?",
+    "reference_answer": "Simple threshold-based stopping (e.g., stop if accuracy < X) is unreliable with small sample sizes due to high variance. Online aggregation provides confidence intervals that quantify uncertainty in real time. For example, a config might show 70% estimated accuracy on 50 examples with 95% CI [60%, 80%], indicating statistical uncertainty. You wouldn't stop this config if the CI overlaps with better configs. Wilson Score strategy handles small samples better than Normal Approximation. Hoeffding Bounds provide guaranteed coverage. Only when confidence intervals show statistical inferiority (e.g., CI [55%, 65%] below better config's CI [70%, 80%]) is stopping justified, preventing false negatives from noisy early data.",
+    "source_evidence": [
+      {"file": "onlineagg.rst", "lines": [80, 150]}
+    ]
+  }
+]
